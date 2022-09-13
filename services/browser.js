@@ -1,8 +1,16 @@
-const puppeteer = require('puppeteer')
+import puppeteer from 'puppeteer'
 const base_url = 'https://tinnhiemmang.vn/';
+import chromium from 'chrome-aws-lambda';
 
 const main = async () => {
-    const browser = await puppeteer.launch()
+    const browser = await await chromium.puppeteer.launch({
+        args: [...chromium.args, "--hide-scrollbars", "--disable-web-security"],
+        defaultViewport: chromium.defaultViewport,
+        executablePath: await chromium.executablePath,
+        headless: true,
+        ignoreHTTPSErrors: true,
+    })
+
     const page = (await browser.pages())[0]
 
     const getBlackListAccount = async () => {
