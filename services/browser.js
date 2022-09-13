@@ -1,15 +1,12 @@
-import puppeteer from 'puppeteer'
+import puppeteer from 'puppeteer-core'
 const base_url = 'https://tinnhiemmang.vn/';
-import chromium from 'chrome-aws-lambda';
+// import chromium from 'chrome-aws-lambda';
 
 const main = async () => {
-    const browser = await await chromium.puppeteer.launch({
-        args: [...chromium.args, "--hide-scrollbars", "--disable-web-security"],
-        defaultViewport: chromium.defaultViewport,
-        executablePath: await chromium.executablePath,
-        headless: true,
-        ignoreHTTPSErrors: true,
-    })
+    const browser = await puppeteer.launch({
+        headless:true,
+        args: ["--no-sandbox"]
+    });
 
     const page = (await browser.pages())[0]
 
