@@ -1,48 +1,21 @@
 {
   "name": "tnm",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.1.0",
   "private": true,
-  "egg": {
-    "declarations": true
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "egg": "^2",
-    "egg-scripts": "^2",
-    "puppeteer": "^17.1.3"
+    "next": "12.3.0",
+    "puppeteer": "^17.1.3",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "autod": "^3",
-    "autod-egg": "^1",
-    "egg-bin": "^4",
-    "egg-ci": "^2",
-    "egg-mock": "^4",
-    "eslint": "^8",
-    "eslint-config-egg": "^12"
-  },
-  "engines": {
-    "node": ">=16.0.0"
-  },
-  "scripts": {
-    "start": "egg-scripts start --daemon --title=egg-server-tnm",
-    "stop": "egg-scripts stop --title=egg-server-tnm",
-    "dev": "egg-bin dev",
-    "debug": "egg-bin debug",
-    "test": "npm run lint -- --fix && npm run test-local",
-    "test-local": "egg-bin test",
-    "cov": "egg-bin cov",
-    "lint": "eslint .",
-    "ci": "npm run lint && npm run cov",
-    "autod": "autod"
-  },
-  "ci": {
-    "version": "16",
-    "type": "github"
-  },
-  "repository": {
-    "type": "git",
-    "url": ""
-  },
-  "author": "",
-  "license": "MIT"
+    "eslint": "8.23.1",
+    "eslint-config-next": "12.3.0"
+  }
 }
